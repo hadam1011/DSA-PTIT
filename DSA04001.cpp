@@ -11,10 +11,10 @@ const ll MOD = 1e9+7;
 
 ll Solve(int n, int k){
     if(k == 0) return 1;
-    ll x = Solve(n, k/2) % MOD; 
+    ll x = Solve(n, k/2); 
     ll ans = (x * x) % MOD;
     if(k % 2) return (ans * n) % MOD;
-    return ans % MOD;
+    return ans;
 }
 
 int main(){
