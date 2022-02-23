@@ -35,5 +35,5 @@ int main(){
     char x;
     cin >> x >> k;
     n = x - 'A' + 1;
-    Try(1);
+    Try();
 }
