@@ -23,7 +23,7 @@ int main(){
         For(i,0,n){
             cin >> x;
             sum[x] = 1;
-            FORD(j,k,x){
+            ForD(j,k,x){
                 if(sum[j-x]) sum[j] = 1;
             }
         }
