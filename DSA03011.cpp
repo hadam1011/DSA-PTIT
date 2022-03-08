@@ -1,0 +1,36 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+#define tests() int t; cin >> t; while (t--)
+#define For(i,a,b) for(int i=a; i<b; i++)
+#define FOR(i,a,b) for(int i=a; i<=b; i++)
+#define FORD(i,a,b) for(int i=a; i>=b; i--)
+#define ForD(i,a,b) for(int i=a; i>b; i--)
+
+typedef long long ll;
+
+ll n, k;
+int MOD = 1e9 + 7;
+
+int main(){
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
+    tests(){
+        cin >> n;
+        priority_queue <ll, vector<ll>, greater<ll>> q;
+        For(i,0,n){
+            cin >> k;
+            q.push(k);
+        }
+        ll kq = 0, sum;
+        while(q.size() >= 2){
+            ll x = q.top(); q.pop();
+            ll y = q.top(); q.pop();
+            sum = (x + y) % MOD;
+            q.push(sum);
+            kq = (sum + kq) % MOD;
+        }
+        cout << kq << endl;
+    }
+}
