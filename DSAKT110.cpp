@@ -23,7 +23,7 @@ int main(){
         FOR(i,1,n) cin >> a[i];
         res[1] = a[1]; 
         res[2] = a[2]; 
-        res[3] = max(a[2], a[1] + a[3]);
+        res[3] = a[1] + a[3];
         FOR(i,4,n){
             res[i] = max(res[i-2], res[i-3]) + a[i];
         }
