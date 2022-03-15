@@ -22,12 +22,10 @@ int main(){
         For(i,0,n) cin >> a[i];
         int kq = 0;
         For(i,0,n){
-            x = 0; 
             res[i] = a[i];
             For(j,0,i){
-                if(a[i] > a[j]) x = max(x, res[j]);
+                if(a[i] > a[j]) res[i] = max(res[i], res[j] + a[i]);
             }
-            res[i] += x;
             kq = max(kq, res[i]);
         }
         cout << kq << endl;
