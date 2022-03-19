@@ -34,7 +34,6 @@ int main(){
             v.push_back(x*10 + 6);
             v.push_back(x*10 + 8);
         }
-        sort(v.begin(), v.end());
         FORD(i,v.size()-1,0) cout << v[i] << " ";
         cout << endl;
     }
