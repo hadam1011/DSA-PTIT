@@ -21,13 +21,13 @@ int main(){
         ll a[n+1] ,res[n+1];
         memset(res, 0, sizeof(res));
         FOR(i,1,n) cin >> a[i];
+        
         res[1] = a[1]; 
-        res[2] = a[2]; 
-        res[3] = a[1] + a[3];
-        FOR(i,4,n){
-            res[i] = max(res[i-2], res[i-3]) + a[i];
+        res[2] = max(a[1], a[2]); 
+        FOR(i,3,n){
+            res[i] = max(res[i-2] + a[i], res[i-1]);
         }
-        sort(res, res+n+1);
+        
         cout << res[n] << endl;
     }
 }
