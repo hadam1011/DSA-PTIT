@@ -28,17 +28,13 @@ int main(){
 
         For(i, 1, n){
             len[i] = 1;
-            if(a[i] < a[st.top()]){
-                cout << 1 << " ";
-            }else{
-                while(a[i] >= a[st.top()]){
-                    len[i] += len[st.top()];
-                    st.pop();
-                    if(st.empty()) break;
-                }
-
-                cout << len[i] << " ";
+            while(a[i] >= a[st.top()]){
+                len[i] += len[st.top()];
+                st.pop();
+                if(st.empty()) break;
             }
+            
+            cout << len[i] << " ";
             st.push(i);
         }
 
