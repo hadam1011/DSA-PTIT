@@ -17,13 +17,13 @@ int MOD = 1e9 + 7;
 int X[8] = {-1, -1, 0, 1, 1, 1, 0, -1};
 int Y[8] = {0, 1, 1, 1, 0, -1, -1, -1};
 
-void BFS(int i, int j){
+void DFS(int i, int j){
     For(k, 0, 8){
         int x = X[k] + i;
         int y = Y[k] + j;
         if(x >= 0 && y >= 0 && x < n && y < m && !visited[x][y] && a[x][y]){
             visited[x][y] = 1;
-            BFS(x, y);
+            DFS(x, y);
         }
     }
 }
@@ -44,7 +44,7 @@ int main(){
                 if(a[i][j] && !visited[i][j]){
                     visited[i][j] = 1;
                     res++;
-                    BFS(i, j);
+                    DFS(i, j);
                 }            
             }
         }
