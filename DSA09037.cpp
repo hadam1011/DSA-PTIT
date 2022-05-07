@@ -10,17 +10,17 @@ using namespace std;
 
 typedef long long ll;
 
-int n, m, k, u, v, y;
+int n, m, k, u, v;
 int visited[1005], vt[1005] = {};
 string s;
 vector<int> adj[1005];
-vector<int> path[1005];
+vector<int> cnt[1005];
 
 void DFS(int u, int i){
     visited[u] = 1;
     for(int x : adj[u]){
         if(!visited[x]){
-            path[x].push_back(i);
+            cnt[x].push_back(i);
             DFS(x, i);
         }
     }
@@ -48,7 +48,7 @@ int main(){
     }
     
     FOR(i, 1, n){
-        if((path[i].size() + vt[i]) == k){
+        if((cnt[i].size() + vt[i]) == k){
             res++;
         }
     }
