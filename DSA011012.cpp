@@ -28,23 +28,23 @@ void Solve(){
 	}
 
 	if(n == m){
-      sort(s1.begin(), s1.end());
-      sort(s2.begin(), s2.end());
-      For(i, 0, n){
-        if(s1[i] != s2[i]){
-          cout << 0 << endl;
-          return;
-        }
-      }
+		sort(s1.begin(), s1.end());
+		sort(s2.begin(), s2.end());
+		For(i, 0, n){
+			if(s1[i] != s2[i]){
+				cout << 0 << endl;
+				return;
+			}
+		}
 
-		  cout << 1 << endl;
-	  }else cout << 0 << endl;
+		cout << 1 << endl;
+	}else cout << 0 << endl;
 }
 
 int main(){
     ios::sync_with_stdio(false);
     cin.tie(NULL);
     tests(){
-		  Solve();
-	  }
+	Solve();
+    }
 }
